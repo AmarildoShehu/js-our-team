@@ -31,7 +31,7 @@ const teamMembers = [
 
 // Stampare su console le informazioni di nome, ruolo e la stringa della foto
 teamMembers.forEach(member => {
-    console.log(`%cNome:%c ${member.name}, %cRuolo:%c ${member.role}, ${member.photo}`, 'font-weight: bold', '', 'font-weight: bold', '', 'font-weight: bold', '');
+    console.log(`%cNome:%c ${member.name}, %cRuolo:%c ${member.role}, ${member.photo}`);
 });
 
 
@@ -53,7 +53,7 @@ teamMembers.forEach(member => {
     memberElement.appendChild(imageElement);
     
     const textElement = document.createElement('p');
-    textElement.innerHTML = `<h4>Nome:</h4> ${member.name}, <h4>Ruolo:</h4> ${member.role} `;
+    textElement.innerHTML = `<h4>Nome:</h4> ${member.name}, <h4>Ruolo:</h4> ${member.role}`;
     memberElement.appendChild(textElement);
     
     teamContainer.appendChild(memberElement);
