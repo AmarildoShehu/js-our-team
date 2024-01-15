@@ -21,12 +21,12 @@ Barbara Ramos |	Graphic Designer     |	barbara-ramos-graphic-designer.jpg
 
 // Utilizzando i dati forniti, creare un array di oggetti per rappresentare i membri del team.
 const teamMembers = [
-    { name: "Wayne Barnett", role: "Founder & CEO", photo: "wayne-barnett-founder-ceo.jpg" },
-    { name: "Angela Caroll", role: "Chief Editor", photo: "angela-caroll-chief-editor.jpg" },
-    { name: "Walter Gordon", role: "Office Manager", photo: "walter-gordon-office-manager.jpg" },
-    { name: "Angela Lopez", role: "Social Media Manager", photo: "angela-lopez-social-media-manager.jpg" },
-    { name: "Scott Estrada", role: "Developer", photo: "scott-estrada-developer.jpg" },
-    { name: "Barbara Ramos", role: "Graphic Designer", photo: "barbara-ramos-graphic-designer.jpg" }
+    { name: "Wayne Barnett", role: "Founder & CEO", photo: "img/wayne-barnett-founder-ceo.jpg" },
+    { name: "Angela Caroll", role: "Chief Editor", photo: "img/angela-caroll-chief-editor.jpg" },
+    { name: "Walter Gordon", role: "Office Manager", photo: "img/imgwalter-gordon-office-manager.jpg" },
+    { name: "Angela Lopez", role: "Social Media Manager", photo: "img/angela-lopez-social-media-manager.jpg" },
+    { name: "Scott Estrada", role: "Developer", photo: "img/scott-estrada-developer.jpg" },
+    { name: "Barbara Ramos", role: "Graphic Designer", photo: "img/barbara-ramos-graphic-designer.jpg" }
 ];
 
 // Stampare su console le informazioni di nome, ruolo e la stringa della foto
@@ -45,9 +45,16 @@ const teamContainer = document.getElementById('team-container');
 
 //Aggiungo elementi al DOM
 teamMembers.forEach(member => {
-    // creo DIV
     const memberElement = document.createElement('div');
-    //inserisco
-    memberElement.innerHTML = `${member.name}, ${member.role}, ${member.photo}`;
+    memberElement.classList.add('team-member');
+    
+    const imageElement = document.createElement('img');
+    imageElement.src = member.photo;
+    memberElement.appendChild(imageElement);
+    
+    const textElement = document.createElement('span');
+    textElement.innerHTML = `<span class="bold">Nome:</span> ${member.name}, <span class="bold">Ruolo:</span> ${member.role}, <span class="bold">Foto:</span> `;
+    memberElement.appendChild(textElement);
+    
     teamContainer.appendChild(memberElement);
 });
