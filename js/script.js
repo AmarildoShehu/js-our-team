@@ -33,3 +33,21 @@ const teamMembers = [
 teamMembers.forEach(member => {
     console.log(`%cNome:%c ${member.name}, %cRuolo:%c ${member.role}, %cFoto:%c ${member.photo}`, 'font-weight: bold', '', 'font-weight: bold', '', 'font-weight: bold', '');
 });
+
+
+
+
+// Stampare le stesse informazioni su DOM sottoforma di stringhe
+
+
+//Recupero Elementi
+const teamContainer = document.getElementById('team-container');
+
+//Aggiungo elementi al DOM
+teamMembers.forEach(member => {
+    // creo DIV
+    const memberElement = document.createElement('div');
+    //inserisco
+    memberElement.innerHTML = `${member.name}, ${member.role}, ${member.photo}`;
+    teamContainer.appendChild(memberElement);
+});
